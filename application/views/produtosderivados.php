@@ -55,7 +55,7 @@
 									</div>-->
 									<div class="col-md-12">
 										<label></label><br>
-										<a href="entrega.php" class="btn btn-primary btn-block" name="submeter2" id="submeter2" onclick="DesabilitaBotao(this.name)">Carrinho: <?php echo $_SESSION['total_produtos'.$_SESSION['id_Cliente'.$idSis_Empresa]];?> Unid.<br> Se desejar Finalizar a compra,<br> click aqui.</a>
+										<a href="entrega.php" class="btn btn-primary btn-block" name="submeter2" id="submeter2" onclick="DesabilitaBotao(this.name)">Seu Carrinho contém: <?php echo $_SESSION['total_produtos'.$_SESSION['id_Cliente'.$idSis_Empresa]];?> Unid.<br> Se desejar Finalizar a compra,<br> click aqui.</a>
 									</div>
 									
 								</div>
@@ -122,8 +122,8 @@
 									$valortotal2 	= $subtotal2;
 									?>		
 									<div class="col-lg-4 col-md-4 col-sm-6 mb-4">
-										<div class="img-produtos ">					 
-											<img class="team-img " src="../<?php echo $sistema;?>/arquivos/imagens/manutencao.jpg" alt="" class="img-circle img-responsive" width="200">
+										<div class="img-produtos ">
+											<img class="team-img " src="<?php echo $idSis_Empresa ?>/produtos/miniatura/<?php echo $read_produtos_derivados_view['Arquivo']; ?>" alt="" class="img-circle img-responsive" width="200">
 											<div class="card-body">
 												<h5 class="card-title"><?php echo utf8_encode ($read_produtos_derivados_view['Nome_Prod']);?><br> 
 																			<?php echo utf8_encode ($read_produtos_derivados_view['Opcao2']);?><br>
@@ -136,18 +136,19 @@
 												<div class="card-body">
 													<?php if($row_empresa['EComerce'] == 'S'){ ?>
 														<?php if(isset($_SESSION['id_Cliente'.$idSis_Empresa])){ ?>
-															<a href="meu_carrinho.php?carrinho=produto&id=<?php echo $read_produtos_derivados_view['idTab_Valor_Pagamento'];?>" class="btn btn-success" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name),exibirPagar()">Adicionar ao Carrinho</a>
+															<?php if(isset($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) && count($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) < '1'){?>
+																<a href="meu_carrinho.php?carrinho=produto&id=<?php echo $read_produtos_derivados_view['idTab_Valor_Pagamento'];?>" class="btn btn-success" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name),exibirPagar()">Adicionar ao Carrinho</a>
+															<?php } ?>
 														<?php } else { ?>
 															<a href="login_cliente.php" class="btn btn-success " name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)">Logar P/ Adicionar ao Carrinho</a>
 														<?php } ?>	
 													<?php } ?>
 												</div>
 											<?php } else { ?>
-												<button class="btn btn-warning "  >Loja Fechada</button>
+												<button class="btn btn-warning">Loja Fechada</button>
 											<?php } ?>
 										</div>
 									</div>
-
 									<?php 
 								}
 							}

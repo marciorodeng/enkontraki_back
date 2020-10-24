@@ -47,7 +47,7 @@
 								-->
 								<div class="col-md-12">
 									<label></label><br>
-									<a href="entrega.php" class="btn btn-primary btn-block" name="submeter2" id="submeter2" onclick="DesabilitaBotao(this.name)">Carrinho com: <?php echo $_SESSION['total_produtos'.$_SESSION['id_Cliente'.$idSis_Empresa]];?> Unid.<br> Se desejar Finalizar a compra,<br> click aqui.</a>
+									<a href="entrega.php" class="btn btn-primary btn-block" name="submeter2" id="submeter2" onclick="DesabilitaBotao(this.name)">Seu Carrinho contém: <?php echo $_SESSION['total_produtos'.$_SESSION['id_Cliente'.$idSis_Empresa]];?> Unid.<br> Se desejar Finalizar a compra,<br> click aqui.</a>
 								</div>
 							</div>
 							<div class="alert alert-warning aguardar" role="alert" name="aguardar" id="aguardar">
@@ -102,7 +102,7 @@
 										echo'
 										<div class="col-lg-4 col-md-6 col-sm-6 mb-4">
 											<div class="img-produtos ">
-												<a href="produtosderivados.php?id_modelo='.$read_produto_view_id['idTab_Produto_Pagamento'].'>"><img class="team-img " src="../'.$sistema.'/arquivos/imagens/manutencao.jpg" alt="" class="img-circle img-responsive" width="200"></a>					 
+												<a href="produtosderivados.php?id_modelo='.$read_produto_view_id['idTab_Produto_Pagamento'].'>"><img class="team-img " src="'.$idSis_Empresa.'/produtos/miniatura/'.$read_produto_view_id['Arquivo'].'" alt="" class="img-circle img-responsive" width="200"></a>					 
 												<div class="card-body">
 													<h5 class="card-title">
 														<a href="produtosderivados.php?id_modelo='.$read_produto_view_id['idTab_Produto_Pagamento'].'">'.utf8_encode($read_produto_view_id['Produtos_Pagamento']).'</a>

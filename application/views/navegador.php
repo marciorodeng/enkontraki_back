@@ -26,11 +26,8 @@
 					<a class="nav-link" href="contato.php">Fale Conosco</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="produtos.php">Produtos</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="promocao.php">Promoções</a>
-				</li>				
+					<a class="nav-link" href="produtos.php">Manutenção</a>
+				</li>			
 				<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>	
 					<?php if($row_empresa['EComerce'] == 'S'){ ?>
 						<li class="nav-item">
@@ -40,27 +37,15 @@
 					<li class="nav-item">
 						<a class="nav-link" href="meus_pedidos.php">Meus Pedidos</a>
 					</li>
-				<?php } ?>	
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
-						<div class="dropdown-menu" aria-labelledby="dropdown01">
-						
-						<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>	
-							<a class="dropdown-item" href="sair.php"> Cliente-Deslogar</a><br><br>							
-						<?php } else { ?>	
-							<a class="dropdown-item" href="login_cliente.php">Cliente</a><br><br>
-						<?php } ?>
-						
-							<!--<a class="dropdown-item" href="login_cliente.php">Cliente</a><br><br>-->
-							<!--
-							<a class="dropdown-item" href="login_associado.php">Associado</a><br><br>
-							-->
-							<a class="dropdown-item" target="_blank" href="../<?php echo $sistema;?>/login/index5">Funcionários</a><br>
-							
-						</div>
-					</li>
-					<!--<li><a href="login_cliente.php">Login</a></li>-->					
-
+				<?php } ?>
+				<li class="nav-item">
+					<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
+						<a class="nav-link" href="sair.php">Sair</a>							
+					<?php } else { ?>
+						<a class="nav-link" href="login_cliente.php">Login</a>
+					<?php } ?>
+				
+				</li>
 			</ul>
 		</div>		
 	</div>

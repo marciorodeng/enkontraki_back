@@ -233,18 +233,19 @@
 								<div class="row">	
 									<div class="col-md-6 card-body text-left">
 										<?php if($row_empresa['EComerce'] == 'S'){ ?>
-											<?php if(count($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) > '0'){ ?>
-
+											<?php if(isset($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) && count($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) > '0'){?>
 												<!--<input class="btn btn-md btn-success" type="submit" value="Escolher Produto/ Finalizar Pedido"/>-->
 												<div class="row">
 													<div class="col-md-6">
 														<br>
-														<input type="submit" class="btn btn-md btn-success btn-block" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)" value="Adicionar Produto!"/>
+														<?php if(count($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) < '1'){?>
+															<input type="submit" class="btn btn-md btn-success btn-block" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)" value="Adicionar Produto!"/>
+														<?php } ?>
 													</div>
 													<?php if($total_venda >= $row_empresa['ValorMinimo']){ ?>
 														<div class="col-md-6">
 															<br>
-															<a href="entrega.php" class="btn btn-warning btn-block" name="submeter2" id="submeter2" onclick="DesabilitaBotao(this.name)">Finalizar Pedido / Observações!</a>
+															<a href="entrega.php" class="btn btn-warning btn-block" name="submeter2" id="submeter2" onclick="DesabilitaBotao(this.name)">Finalizar Compra!</a>
 														</div>
 													<?php }else{ ?>
 														<div class="alert alert-warning aguardar" role="alert">
@@ -256,15 +257,14 @@
 												  Aguarde um instante! Estamos processando sua solicitação!
 												</div>
 												<!--<input type="submit" class="azul" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)" value="Cadastrar"/>-->
-											
-											<?php } else { ?>	
-										
-												<a href="produtos.php" class="btn btn-success" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)">Adicionar Produto</a>
+											<?php } else { ?>
+												<?php if(count($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) < '1'){?>
+													<a href="produtos.php" class="btn btn-success" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)">Adicionar Produto</a>
+												<?php } ?>
 												<div class="alert alert-warning aguardar" role="alert" name="aguardar" id="aguardar">
 												  Aguarde um instante! Estamos processando sua solicitação!
 												</div>									
 												<!--<input type="submit" class="btn btn-md btn-success" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)" value="Escolher Produto/ Finalizar Pedido""/>-->
-											
 											<?php } ?>
 										<?php } ?>
 									</div>
