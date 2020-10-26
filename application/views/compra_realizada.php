@@ -7,7 +7,7 @@
 				</h2>
 				<hr class="botm-line">
 				<h2 class="ser-title">
-					Pedido: <a href="pedido.php?id=<?php echo $row_link['idApp_OrcaTrata'];?>"><?php echo $row_link['idApp_OrcaTrata']; ?></a>
+					Pedido: <a href="pedido.php?id=<?php echo $row_link['idApp_Pagamento'];?>"><?php echo $row_link['idApp_Pagamento']; ?></a>
 				</h2>
 			</div>					
 			<div class="col-md-2" >

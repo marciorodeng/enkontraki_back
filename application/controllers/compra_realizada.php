@@ -3,7 +3,7 @@
 	$code_pedido = addslashes($_GET['code']);
 	$type_pedido = addslashes($_GET['type']);
 	
-	$result_link = "SELECT * FROM App_Pag_Online WHERE cod_trans = '".$code_pedido."'  ORDER BY idApp_Pag_Online ASC";
+	$result_link = "SELECT * FROM App_Pag_Online_Pagamento WHERE cod_trans = '".$code_pedido."'  ORDER BY idApp_Pag_Online_Pagamento ASC";
 	$resultado_link = mysqli_query($conn, $result_link);
 	$row_link = mysqli_fetch_assoc($resultado_link);
 	

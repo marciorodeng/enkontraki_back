@@ -12,7 +12,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>					
-			<a class="navbar-brand" href="inicial.php"><img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/<?php echo $row_documento['Logo_Nav']; ?>"></a>
+			<a class="navbar-brand" href="produtos.php"><img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/<?php echo $row_documento['Logo_Nav']; ?>"></a>
 			
 			<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
 				<a class="navbar-brand-nome"style="color: #FFFFFF" href=""><?php echo utf8_encode($_SESSION['Nome_Cliente'.$idSis_Empresa]);?></a>
@@ -28,12 +28,10 @@
 				<li class="nav-item">
 					<a class="nav-link" href="produtos.php">Manutenção</a>
 				</li>			
-				<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>	
-					<?php if($row_empresa['EComerce'] == 'S'){ ?>
-						<li class="nav-item">
-							<a class="nav-link" href="meu_carrinho.php">Meu Carrinho</a>
-						</li>
-					<?php } ?>
+				<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
+					<li class="nav-item">
+						<a class="nav-link" href="meu_carrinho.php">Meu Carrinho</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="meus_pedidos.php">Meus Pedidos</a>
 					</li>

@@ -17,15 +17,27 @@
 			<div class="row">
 				<div class="row">	
 					<div class="col-md-12">	
-						<div class="col-md-8">
-							<h2 class="ser-title">Meus Pagamentos!</h2>
+						<div class="col-md-6">
+							<h2 class="ser-title">Meus Pedidos!</h2>
 							<hr class="botm-line">
 						</div>
-						<div class="col-md-4 card-body text-right">
-							<a href="meus_pedidos.php" class="btn btn-warning">Atualizar Status dos Pedidos</a>
+						<div class="col-md-6">
+							<div class="input-group">
+								<span class="input-group-btn">
+									<a href="meus_pedidos.php" class="btn btn-warning btn-block">
+										<span class="glyphicon glyphicon-search"></span> Atualizar Status
+									</a>
+								</span>
+								<span class="input-group-btn">	
+									<a href="produtos.php" class="btn btn-success btn-block">
+										<span class="glyphicon glyphicon-plus"></span> Novo Pedido
+									</a>
+								</span>
+							</div>
 						</div>
 					</div>	
-				</div>	
+				</div>
+				<br>	
 				<div class="col-lg-1"></div>
 					<div class="col-lg-10">
 					<div class="col-md-12 order-md-2 mb-4">
@@ -508,15 +520,11 @@
 							?>
 			
 						</ul>
-						<?php if($loja_aberta){ ?>	
-							<?php if($row_empresa['EComerce'] == 'S'){ ?>
-								<div class="card-body text-right">
-									<a href="produtos.php" class="btn btn-success">Novo Pedido</a>
-								</div>
-							<?php } ?>
-						<?php } else { ?>
-							<button class="btn btn-warning btn-block "  >Loja Fechada</button>
-						<?php } ?>
+						<!--
+						<div class="card-body text-right">
+							<a href="produtos.php" class="btn btn-success">Novo Pedido</a>
+						</div>
+						-->
 					</div>
 				</div>
 			</div>

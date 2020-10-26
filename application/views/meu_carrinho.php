@@ -32,7 +32,7 @@
 				
 				<div class="col-lg-12">
 					<div class="col-md-12 order-md-2 mb-4 img-prod-pag fundo-carrinho">
-						<form name="Form" id="Form" action="?acao=up-produtos" method="post">
+						<form name="FormularioEntrega" id="FormularioEntrega" method="post" action="finalizar_pedido.php">
 							<ul class="list-group mb-3 ">										
 								<?php
 									$total_venda = '0';
@@ -229,59 +229,67 @@
 									</li>
 								<?php } ?>
 							</ul>
-							<?php if($loja_aberta){ ?>	
-								<div class="row">	
-									<div class="col-md-6 card-body text-left">
-										<?php if($row_empresa['EComerce'] == 'S'){ ?>
-											<?php if(isset($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) && count($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) > '0'){?>
-												<!--<input class="btn btn-md btn-success" type="submit" value="Escolher Produto/ Finalizar Pedido"/>-->
-												<div class="row">
-													<div class="col-md-6">
-														<br>
-														<?php if(count($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) < '1'){?>
-															<input type="submit" class="btn btn-md btn-success btn-block" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)" value="Adicionar Produto!"/>
-														<?php } ?>
-													</div>
-													<?php if($total_venda >= $row_empresa['ValorMinimo']){ ?>
-														<div class="col-md-6">
-															<br>
-															<a href="entrega.php" class="btn btn-warning btn-block" name="submeter2" id="submeter2" onclick="DesabilitaBotao(this.name)">Finalizar Compra!</a>
-														</div>
-													<?php }else{ ?>
-														<div class="alert alert-warning aguardar" role="alert">
-															Atenção! O Valor Mínimo do pedido deve ser de R$ <?php echo number_format($row_empresa['ValorMinimo'], 2, ",", ".");?>
-														</div>
+							<input type="hidden" name="ValorDinheiro"  id="ValorDinheiro" value="">
+							<input type="hidden" name="Descricao"  id="Descricao" value=""></input>
+							<input type="hidden" name="RecarregaCepDestino" id="RecarregaCepDestino" value="<?php echo $row_empresa['CepEmpresa'];?>">
+							<input type="hidden" name="RecarregaLogradouro" id="RecarregaLogradouro" value="<?php echo $row_empresa['EnderecoEmpresa'];?>">
+							<input type="hidden" name="RecarregaNumero" id="RecarregaNumero" value="<?php echo $row_empresa['NumeroEmpresa'];?>">
+							<input type="hidden" name="RecarregaComplemento" id="RecarregaComplemento" value="<?php echo $row_empresa['ComplementoEmpresa'];?>">
+							<input type="hidden" name="RecarregaBairro" id="RecarregaBairro" value="<?php echo $row_empresa['BairroEmpresa'];?>">
+							<input type="hidden" name="RecarregaCidade" id="RecarregaCidade" value="<?php echo $row_empresa['MunicipioEmpresa'];?>">
+							<input type="hidden" name="RecarregaEstado" id="RecarregaEstado" value="<?php echo $row_empresa['EstadoEmpresa'];?>">
+							<input type="hidden" name="RecarregaReferencia" id="RecarregaReferencia" value="<?php echo $row_empresa['ReferenciaEmpresa'];?>">
+					
+							<input type="hidden" name="CepOrigem" id="CepOrigem" placeholder="CepOrigem" value="<?php echo $row_empresa['CepEmpresa'];?>">
+							<input type="hidden" name="Peso" id="Peso" placeholder="Peso" value="<?php echo $total_peso; ?>">
+							<input type="hidden" name="Formato" id="Formato" placeholder="Formato" value="1">
+							<input type="hidden" name="Comprimento" id="Comprimento" placeholder="Comprimento" value="30">
+							<input type="hidden" name="Largura" id="Largura" placeholder="Largura" value="15">									
+							<input type="hidden" name="Altura" id="Altura" placeholder="Altura" value="5">
+							<input type="hidden" name="Diametro" id="Diametro" placeholder="Diametro" value="0">		
+							<input type="hidden" name="MaoPropria" id="MaoPropria" placeholder="MaoPropria" value="N">
+							<input type="hidden" name="ValorDeclarado" id="ValorDeclarado" placeholder="ValorDeclarado" value="0">
+							<input type="hidden" name="AvisoRecebimento" id="AvisoRecebimento" placeholder="AvisoRecebimento" value="N">							
+							
+							<input type="hidden" name="tipofrete" id="Retirada" value="1">
+							<input type="hidden" name="localpagamento" id="OnLine" value="O" >
+							<input type="hidden" name="formapagamento" id="FormaPagamento" value="1" >
+							
+							<div class="row">	
+								<div class="col-md-12 card-body text-left">
+									<?php if(isset($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]])){?>	
+										<?php if(count($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) > '0'){?>
+											<div class="row">
+												<div class="col-md-12">
+													<?php if(count($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) < '1'){?>
+														<a href="produtos.php" class="btn btn-success btn-lg btn-block" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)">Adicionar Produto</a>
+														<input type="hidden" name="submeter2" id="submeter2"/>
+													<?php } else{ ?>
+														<button type="submit" class="btn btn-primary btn-lg btn-block "  name="btnComprar" id="btnComprar"> Finalizar Pedido </button>
 													<?php } ?>
-												</div>	
-												<div class="alert alert-warning aguardar" role="alert" name="aguardar" id="aguardar">
-												  Aguarde um instante! Estamos processando sua solicitação!
+													<div class="alert alert-warning aguardar" role="alert" name="aguardar" id="aguardar">
+														Aguarde um instante! Estamos processando sua solicitação!
+													</div>
 												</div>
-												<!--<input type="submit" class="azul" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)" value="Cadastrar"/>-->
-											<?php } else { ?>
-												<?php if(count($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) < '1'){?>
-													<a href="produtos.php" class="btn btn-success" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)">Adicionar Produto</a>
-												<?php } ?>
-												<div class="alert alert-warning aguardar" role="alert" name="aguardar" id="aguardar">
-												  Aguarde um instante! Estamos processando sua solicitação!
-												</div>									
-												<!--<input type="submit" class="btn btn-md btn-success" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)" value="Escolher Produto/ Finalizar Pedido""/>-->
-											<?php } ?>
+											</div>
+										<?php } else { ?>
+											<a href="produtos.php" class="btn btn-success" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)">Adicionar Produto</a>
+											<div class="alert alert-warning aguardar" role="alert" name="aguardar" id="aguardar">
+											  Aguarde um instante! Estamos processando sua solicitação!
+											</div>
 										<?php } ?>
-									</div>
-									<!--
-									<div class="col-md-4 card-body text-center">
-										<input class="btn btn-md btn-primary" type="submit" value="Atualizar Quantidade"/>
-									</div>
-									-->
+									<?php } else { ?>
+										<a href="produtos.php" class="btn btn-success" name="submeter" id="submeter" onclick="DesabilitaBotao(this.name)">Adicionar Produto</a>
+										<div class="alert alert-warning aguardar" role="alert" name="aguardar" id="aguardar">
+										  Aguarde um instante! Estamos processando sua solicitação!
+										</div>
+									<?php } ?>	
 								</div>
-							<?php } else { ?>
-								<button class="btn btn-warning btn-block "  >Loja Fechada</button>
-							<?php } ?>
+							</div>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
 <?php } ?>							

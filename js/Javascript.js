@@ -4,24 +4,24 @@
 
 //Função que desabilita a Mensagem de Aguardar.
 function Aguardar () {
-	//$('.aguardar').hide();
+	$('.aguardar').hide();
 	document.getElementById('aguardar').style.display = "none";
 	
 }	
 	
 //Função que desabilita o botão submit após 1 click, evitando mais de um envio de formulário.
 function DesabilitaBotao (valor) {
-	//$('.aguardar').show();
+	$('.aguardar').show();
     document.getElementById('aguardar').style.display = "";
 	if (valor) {
         document.getElementById('submeter').style.display = "none";
 		document.getElementById('submeter2').style.display = "none";
-        //document.getElementById('aguardar').style.display = "";
+        document.getElementById('aguardar').style.display = "";
     }
     else {
         document.getElementById('submeter').style.display = "";
 		document.getElementById('submeter2').style.display = "";
-        //document.getElementById('aguardar').style.display = "none";
+        document.getElementById('aguardar').style.display = "none";
     }
 }
 
