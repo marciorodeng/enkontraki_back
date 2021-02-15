@@ -159,16 +159,16 @@
 										</div>
 										<div class="mb-3">
 											<label>E-mail</label>  
-											<input type="email" name="senderEmail" id="senderEmail" placeholder="E-mail do comprador" value="c53501031513143960391@sandbox.pagseguro.com.br" class="form-control" required>                                                
+											<input type="email" name="senderEmail" id="senderEmail" placeholder="E-mail do comprador" value="" class="form-control" required>                                                
 										</div>
 										<div class="row">
 											<div class="col-md-3 mb-3">
 												<label>DDD</label>
-												<input type="text" name="senderAreaCode" id="senderAreaCode" placeholder="DDD" value="11" class="form-control" required>
+												<input type="text" name="senderAreaCode" id="senderAreaCode" placeholder="DDD" value="" class="form-control" required>
 											</div>
 											<div class="col-md-9 mb-3">
 												<label>Telefone</label>
-												<input type="text" name="senderPhone" id="senderPhone" placeholder="Somente número" value="56273440" class="form-control" required>
+												<input type="text" name="senderPhone" id="senderPhone" placeholder="Somente número" value="" class="form-control" required>
 											</div>
 										</div>
 											
