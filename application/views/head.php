@@ -16,20 +16,20 @@
 
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal" rel="stylesheet" type="text/css" >	
-<!--<link href="../site2_back/css/bootstrap.min.css" rel="stylesheet">-->
-<link href="../site2_back/css/bootstrap.css" rel="stylesheet"  >
-<link href="../site2_back/css/personalizado.css" rel="stylesheet"  >
-<link href="../site2_back/css/style.css" rel="stylesheet" type="text/css" >
-<link href="../site2_back/css/shop-homepage.css" rel="stylesheet">
-<link href="../site2_back/css/signin.css" rel="stylesheet">
-<link href="../site2_back/css/carregador.css" rel="stylesheet" type="text/css" >
+<!--<link href="../enkontraki_back/css/bootstrap.min.css" rel="stylesheet">-->
+<link href="../enkontraki_back/css/bootstrap.css" rel="stylesheet"  >
+<link href="../enkontraki_back/css/personalizado.css" rel="stylesheet"  >
+<link href="../enkontraki_back/css/style.css" rel="stylesheet" type="text/css" >
+<link href="../enkontraki_back/css/shop-homepage.css" rel="stylesheet">
+<link href="../enkontraki_back/css/signin.css" rel="stylesheet">
+<link href="../enkontraki_back/css/carregador.css" rel="stylesheet" type="text/css" >
 
 <title><?php echo utf8_encode($row_empresa['NomeEmpresa']); ?></title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>		
-<script src="../site2_back/js/bootstrap.min.js"></script> 		
-<script src="../site2_back/js/jquery.min.js"></script>
-<script src="../site2_back/js/jquery.mask.min.js"></script>
-<script src="../site2_back/js/carregador.js" language="JavaScript"></script>
+<script src="../enkontraki_back/js/bootstrap.min.js"></script> 		
+<script src="../enkontraki_back/js/jquery.min.js"></script>
+<script src="../enkontraki_back/js/jquery.mask.min.js"></script>
+<script src="../enkontraki_back/js/carregador.js" language="JavaScript"></script>
 			
 		

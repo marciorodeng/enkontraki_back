@@ -84,10 +84,14 @@
 										echo'
 										<div class="col-lg-4 col-md-6 col-sm-6 mb-4">
 											<div class="img-produtos ">
-												<a href="produtosderivados.php?id_modelo='.$read_produto_view_id['idTab_Produto_Pagamento'].'>"><img class="team-img " src="'.$idSis_Empresa.'/produtos/miniatura/'.$read_produto_view_id['Arquivo'].'" alt="" class="img-circle img-responsive" width="200"></a>					 
+												<a href="produtosderivados.php?id_modelo='.$read_produto_view_id['idTab_Produto_Pagamento'].'>">
+													<img class="team-img " src="'.$idSis_Empresa.'/produtos/miniatura/'.$read_produto_view_id['Arquivo'].'" alt="" class="img-circle img-responsive" width="200">
+												</a>					 
 												<div class="card-body">
 													<h5 class="card-title">
-														<a href="produtosderivados.php?id_modelo='.$read_produto_view_id['idTab_Produto_Pagamento'].'">'.utf8_encode($read_produto_view_id['Produtos_Pagamento']).'</a>
+														<a href="produtosderivados.php?id_modelo='.$read_produto_view_id['idTab_Produto_Pagamento'].'">
+															'.utf8_encode($read_produto_view_id['Produtos_Pagamento']).'
+														</a>
 													</h5>
 												</div>
 											</div>

@@ -81,6 +81,7 @@
 								TPS.Nome_Prod,
 								TPS.Arquivo,
 								TPS.Valor_Produto,
+								TPS.Produtos_Descricao_Pagamento,
 								TOP2.Opcao AS Opcao2,
 								TOP1.Opcao AS Opcao1,
 								(TV.ValorProduto) AS SubTotal2
@@ -109,12 +110,19 @@
 										<div class="img-produtos ">
 											<img class="team-img " src="<?php echo $idSis_Empresa ?>/produtos/miniatura/<?php echo $read_produtos_derivados_view['Arquivo']; ?>" alt="" class="img-circle img-responsive" width="200">
 											<div class="card-body">
-												<h5 class="card-title"><?php echo utf8_encode ($read_produtos_derivados_view['Nome_Prod']);?><br> 
-																			<?php echo utf8_encode ($read_produtos_derivados_view['Opcao2']);?><br>
-																			<?php echo utf8_encode ($read_produtos_derivados_view['Opcao1']);?> - 
-																			<?php echo utf8_encode ($read_produtos_derivados_view['Convdesc']);?>
+												<h5 class="card-title">
+													<?php echo utf8_encode ($read_produtos_derivados_view['Nome_Prod']);?><br> 
+													<?php echo utf8_encode ($read_produtos_derivados_view['Opcao2']);?><br>
+													<?php echo utf8_encode ($read_produtos_derivados_view['Opcao1']);?> - 
+													<?php echo utf8_encode ($read_produtos_derivados_view['Convdesc']);?>
 												</h5>
-												<h5><?php echo utf8_encode ($read_produtos_derivados_view['QtdProdutoIncremento']);?> Unid. R$ <?php echo number_format($valortotal2,2,",",".");?></h5>
+												<h5 class="card-title">
+													<?php echo utf8_encode ($read_produtos_derivados_view['Produtos_Descricao_Pagamento']);?>
+												</h5>
+												<h5>
+													<?php echo utf8_encode ($read_produtos_derivados_view['QtdProdutoIncremento']);?> Unid. R$ 
+													<?php echo number_format($valortotal2,2,",",".");?>
+												</h5>
 											</div>
 											<div class="card-body">
 												<?php if(isset($_SESSION['id_Cliente'.$idSis_Empresa])){ ?>

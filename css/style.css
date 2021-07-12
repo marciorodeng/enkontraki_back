@@ -1,4 +1,4 @@
-
+/*
 body {
 	font-family: 'Open Sans', sans-serif;
 	line-height: 20px;
@@ -6,6 +6,7 @@ body {
 	font-size: 300;
 	font-size: 16px;
 }
+*/
 ol, ul {
 	list-style: none;
 }
@@ -32,7 +33,12 @@ a, a:hover, a:focus, a:active{
 }
 
 .section-padding{
-	padding: 30px 0px;
+	padding: 0px 0px;
+    background-color: #fff;
+}
+
+.section-padding0{
+	padding: 0px 0px;
     background-color: #fff;
 }
 
@@ -116,7 +122,15 @@ hr.botm-line {
     background: #ffb737;
     position: relative;
     border: 0;
-    margin: 20px 0 20px 0;
+    margin: 8px 0 10px 0;
+}
+hr.botm-line-2 {
+    height: 3px;
+    width: 60px;
+    background: #ffb737;
+    position: relative;
+    border: 0;
+    margin: 8px 0 -10px 0;
 }
 
 /***************************************
@@ -225,15 +239,17 @@ banner
 {
     background-color: rgba(12, 184, 182) !important;
 }
+
 #banner{
 	background: url('../img/bg-banner.jpg') no-repeat fixed;
 	background-size: cover;
-	min-height: 300px;
+	min-height: 0px;
 	position: relative;
 }
+
 .bg-color{
 	background-color: transparent;
-	min-height: 650px;
+	min-height: 0px;
 }
 .banner-info{
 	padding-top: 190px;
@@ -565,8 +581,10 @@ footer
 }
 
 .top-footer {
-    padding: 5px 0px;
+	padding: 5px 0px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: 5px;
+	
 }
 .footer-line {
     padding: 10px 0px;
@@ -585,9 +603,49 @@ footer
     color: #0cb8b6;
     text-transform: none;
 }
-@media (min-width: 551px) and (max-width: 980px){
 
+@media (max-width: 219px){
+    .testi-info{
+        margin-bottom: 20px;
+    }
+    .marb20{
+        margin-top: 30px;
+    }
+    h2{
+        font-size: 24px;
+        line-height: 1.2;
+    }
+    .section-title{
+        margin-bottom: 30px;
+    }
+    .medi-info {
+		border: 0px;
+		border-bottom: 1px solid #fff;
+    }
+    .service-info{
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    .caption h3 {
+		font-size: 14px;
+    }
+    .caption p{
+		font-size: 12px;
+		padding-bottom: 5px;
+    }
+    .caption ul li a i{
+        font-size: 14px;
+    }
+    .banner-text h1{
+        font-size: 24px;
+    }
+	.section-padding0{
+		padding: 14px 0px;
+		background-color: #fff;
+	}
+	
 }
+
 @media (min-width: 220px) and (max-width: 551px){
     .testi-info{
         margin-bottom: 20px;
@@ -603,19 +661,19 @@ footer
         margin-bottom: 30px;
     }
     .medi-info {
-    border: 0px;
-    border-bottom: 1px solid #fff;
+		border: 0px;
+		border-bottom: 1px solid #fff;
     }
     .service-info{
         margin-top: 20px;
         margin-bottom: 0px;
     }
     .caption h3 {
-    font-size: 14px;
+		font-size: 14px;
     }
     .caption p{
-    font-size: 12px;
-    padding-bottom: 5px;
+		font-size: 12px;
+		padding-bottom: 5px;
     }
     .caption ul li a i{
         font-size: 14px;
@@ -623,4 +681,90 @@ footer
     .banner-text h1{
         font-size: 24px;
     }
+	.section-padding0{
+		padding: 14px 0px;
+		background-color: #fff;
+	}	
+}
+
+@media (min-width: 552px) and (max-width: 767px){
+    .testi-info{
+        margin-bottom: 20px;
+    }
+    .marb20{
+        margin-top: 30px;
+    }
+    h2{
+        font-size: 24px;
+        line-height: 1.2;
+    }
+    .section-title{
+        margin-bottom: 30px;
+    }
+    .medi-info {
+		border: 0px;
+		border-bottom: 1px solid #fff;
+    }
+    .service-info{
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    .caption h3 {
+		font-size: 14px;
+    }
+    .caption p{
+		font-size: 12px;
+		padding-bottom: 5px;
+    }
+    .caption ul li a i{
+        font-size: 14px;
+    }
+    .banner-text h1{
+        font-size: 24px;
+    }
+	.section-padding0{
+		padding: 14px 0px;
+		background-color: #fff;
+	}
+}
+
+@media (min-width: 768px){
+    .testi-info{
+        margin-bottom: 20px;
+    }
+    .marb20{
+        margin-top: 30px;
+    }
+    h2{
+        font-size: 24px;
+        line-height: 1.2;
+    }
+    .section-title{
+        margin-bottom: 30px;
+    }
+    .medi-info {
+		border: 0px;
+		border-bottom: 1px solid #fff;
+    }
+    .service-info{
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    .caption h3 {
+		font-size: 14px;
+    }
+    .caption p{
+		font-size: 12px;
+		padding-bottom: 5px;
+    }
+    .caption ul li a i{
+        font-size: 14px;
+    }
+    .banner-text h1{
+        font-size: 24px;
+    }
+	.section-padding0{
+		padding: 14px 0px;
+		background-color: #fff;
+	}
 }
