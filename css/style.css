@@ -249,7 +249,7 @@ banner
 
 .bg-color{
 	background-color: transparent;
-	min-height: 0px;
+	min-height: 0px;/*esta linha comanda o tamanho do bg, era 650px*/
 }
 .banner-info{
 	padding-top: 190px;

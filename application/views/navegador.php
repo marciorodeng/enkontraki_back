@@ -3,7 +3,7 @@
 		$_SESSION['Acesso']['idSis_Empresa'] = $idSis_Empresa;
 	}
 ?>
-<section id="banner" class="img-responsive">
+<section id="banner2" class="img-responsive">
 	<div class="bg-color">
 		<nav class="navbar navbar-inverse navbar-fixed-top header-menu">
 			<div class="container">
@@ -39,22 +39,22 @@
 								<a class="nav-link" href="meus_pedidos.php">Meus Pedidos</a>
 							</li>
 						<?php } ?>
-						<!--
+						
 						<li class="nav-item">
 							<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
 								<a class="nav-link" href="sair.php">Sair</a>							
 							<?php } else { ?>
-								<a class="nav-link" href="login_cliente.php">Login</a>
+								<a class="nav-link" href="../sistema/login/index2">Já sou Cliente</a>
 							<?php } ?>
 						
 						</li>
-						-->
+						<!--
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Login <span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="dropdown01">
-								<!--
+								
 								<li>
 									<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
 										<a class="dropdown-item" href="sair.php">
@@ -69,14 +69,15 @@
 									<?php } ?>
 								</li>
 								<li role="separator" class="divider"></li>
-								-->
+								
 								<li>
-									<!--<a class="dropdown-item" target="_blank" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma:</a>
-									<a class="dropdown-item" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma</a>-->
+									<a class="dropdown-item" target="_blank" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma:</a>
+									<a class="dropdown-item" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma</a>
 									<a class="dropdown-item" href="../sistema/login/index2">Acessar Plataforma</a>
 								</li>
 							</ul>
 						</li>
+						-->
 					</ul>
 				</div>		
 			</div>
