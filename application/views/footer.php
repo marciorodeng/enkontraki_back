@@ -24,7 +24,7 @@
 						</div>	
 					<?php } ?>
 				</div>
-				
+				<!--
 				<div class="col-md-4 col-sm-4 marb20">
 					<div class="ftr-tle">
 						<h4 class="white no-padding">Atalhos</h4>
@@ -37,6 +37,7 @@
 						</ul>
 					</div>
 				</div>
+				-->
 				<div class="col-md-4 col-sm-4 marb20">
 					<div class="ftr-tle">
 						<h4 class="white no-padding">Atendimento</h4>

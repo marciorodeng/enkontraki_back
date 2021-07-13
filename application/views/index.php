@@ -110,14 +110,11 @@
 		<div class="row">
 			<div class="col-lg-12  col-md-12 col-sm-12 col-xs-12">
 				<div class="section-title">
-					<h2 class="head-title lg-line">A Plataforma<br></h2>
+					<h2 class="ser-title">A Plataforma<br></h2>
 					<hr class="botm-line">
 					<div class="row">
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<p class="sec-para">Temos como missão: "Promover o bem-estar na relação entre homem e animal,
-								cuidando da saúde de cães e gatos". Por isso, estamos em constante aprimoramento, participando
-								de Congressos e Cursos, trazendo o que há de mais moderno, em termo de pesquisa e aplicação nos
-							tratamentos e manuseio dos animais em clínica veterinária.</p>
+							<p class="sec-para">xxxxx.</p>
 							<a href="" style="color: #0cb8b6; padding-top:10px;">Saiba Mais..</a>
 								
 						</div>
@@ -203,29 +200,34 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2 class="ser-title">Nossos Serviços</h2>
+				<h2 class="ser-title">Planos</h2>
 				<hr class="botm-line">
 			</div>
 			<div class="schedule-tab">
-				<div class="col-md-4 col-sm-4 bor-left">
+				<div class="col-lg-4 col-md-6 col-sm-4 bor-left">
 					<div class="mt-boxy-color"></div>
 					<div class="medi-info">
-						<h3>Banho e Tosa</h3>
-						<p>Todos que possuem um cão sabem o quão mal cheiroso ele pode ficar se não tiver uma higiene regular.
-							O banho e tosa de cães são ferramentas importantes para manter a saúde do cãozinho e evitar problemas
-							de saúde tanto do animal, quanto do seu dono. Pulgas, carrapatos e todo tipo de bactéria ou doença
-						de pelos e pele podem ser facilmente evitadas para que o dono não precise gastar mais tendo que tratá-las. </p>
+						<h3>Plano1</h3>
+						<p>xxx.</p>
 						<a href="#" class="medi-info-btn">Saiba Mais</a>		    	
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-4">
+				<div class="col-lg-4 col-md-6 col-sm-4">
 					<div class="medi-info">
-						<h3>Petshop</h3>
-						<p>Afim de adotar um companheiro ? Nós da Age Vet temos a solução para o seu problema.
-						Animais Tratados e Vacinados prontos para ir pra um novo lar.</p>
+						<h3>Plano2</h3>
+						<p>xxx.</p>
 						<a href="#" class="medi-info-btn">Saiba Mais</a>	
 					</div>
 				</div>
+				<div class="col-lg-4 col-md-6 col-sm-4 bor-left">
+					<div class="mt-boxy-color"></div>
+					<div class="medi-info">
+						<h3>Plano3</h3>
+						<p>xxx.</p>
+						<a href="#" class="medi-info-btn">Saiba Mais</a>		    	
+					</div>
+				</div>
+				<!--
 				<div class="col-md-4 col-sm-4 mt-boxy-3">
 					<div class="mt-boxy-color"></div>
 					<div class="time-info">
@@ -233,21 +235,22 @@
 						<table style="margin: 8px 0px 0px;" border="1">
 							<tbody>
 								<tr>
-									<td>Segunda à Sexta</td>
+									<td>xxx</td>
 									<td></td>
 								</tr>
 								<tr>
-									<td>Sábado</td>
+									<td>xxx</td>
 									<td></td>
 								</tr>
 								<tr>
-									<td>Domingo</td>
+									<td>xxx</td>
 									<td></td>
 								</tr>
 							</tbody>
 						</table>				    		
 					</div>
 				</div>
+				-->
 			</div>
 		</div>
 	</div>

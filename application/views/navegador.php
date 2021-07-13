@@ -14,7 +14,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>					
-					<a class="navbar-brand" href="produtos.php"><img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/<?php echo $row_documento['Logo_Nav']; ?>"></a>
+					<a class="navbar-brand" href="index.php"><img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/<?php echo $row_documento['Logo_Nav']; ?>"></a>
 					<!--
 					<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
 						<a class="navbar-brand-nome"style="color: #FFFFFF" href=""><?php echo utf8_encode($_SESSION['Nome_Cliente'.$idSis_Empresa]);?></a>
@@ -28,9 +28,11 @@
 						<li class="nav-item">
 							<a class="nav-link" href="contato.php">Fale Conosco</a>
 						</li>
+						
 						<li class="nav-item">
-							<a class="nav-link" href="produtos.php">Planos</a>
-						</li>			
+							<a class="nav-link" href="#cta-1">Planos</a>
+						</li>
+						
 						<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
 							<li class="nav-item">
 								<a class="nav-link" href="meu_carrinho.php">Meu Carrinho</a>
@@ -44,7 +46,7 @@
 							<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
 								<a class="nav-link" href="sair.php">Sair</a>							
 							<?php } else { ?>
-								<a class="nav-link" href="../sistema/login/index2">Já sou Cliente</a>
+								<a class="nav-link" href="../sistema/login/index2">J? sou Cliente</a>
 							<?php } ?>
 						
 						</li>
