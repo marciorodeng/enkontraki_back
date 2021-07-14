@@ -92,7 +92,8 @@
 						<ol class="carousel-indicators">
 							<li data-target="#carouselSite" data-slide-to="0" class="active"></li>
 							<li data-target="#carouselSite" data-slide-to="1"></li>
-							<li data-target="#carouselSite" data-slide-to="2"></li>			
+							<li data-target="#carouselSite" data-slide-to="2"></li>
+							<li data-target="#carouselSite" data-slide-to="3"></li>			
 						</ol>
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
@@ -103,6 +104,9 @@
 							</div>
 							<div class="item">
 								<img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/Slide3.jpg" class="img-responsive d-block">												
+							</div>
+							<div class="item">
+								<img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/Slide4.jpg" class="img-responsive d-block">												
 							</div>
 						</div>
 						<!--
@@ -130,16 +134,20 @@
 						</div>
 						-->
 						<div class="row">
-							<div class="col-lg-2 col-md-2 col-sm-2 "></div>	
+								
 							<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 col-xms-6 form-group text-center">
-							
-								<a  type="button" class="btn btn-md btn-default btn-block text-left" href="../sistema/loginempresa/registrar" role="button" > 
-									 Experimente Gr?tis por 30 dias!
+								<a  type="button" class="btn btn-sm btn-danger btn-block text-left" href="../sistema/loginempresa/registrar" role="button" > 
+									 Cadastrar Empresa!
 								</a>											
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-xms-6 form-group text-center">
-								<a  type="button" class="btn btn-md btn-default btn-block text-left" href="../sistema/login/index2" role="button" > 
-									 Acessar Plataforma!
+								<a  type="button" class="btn btn-sm btn-info btn-block text-left" href="../sistema/login/index2" role="button" > 
+									 Acessar sua Empresa!
+								</a>											
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-xms-6 form-group text-center">
+								<a  type="button" class="btn btn-sm btn-warning btn-block text-left" href="../sistema/pesquisar/empresas" role="button" > 
+									 Pesquisar Empresas!
 								</a>											
 							</div>	
 						</div>
