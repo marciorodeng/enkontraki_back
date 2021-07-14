@@ -69,7 +69,7 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<div class="credits">
-						<h6>Feito Por <a href="https://www.enkontraki.com.br/<?php echo $sistema ?>" target="_blank">enkontraki.com.br</a> .TODOS OS DIREITOS RESERVADOS.<br>
+						<h6>Feito Por <a href="https://www.enkontraki.com.br">enkontraki.com.br</a> .TODOS OS DIREITOS RESERVADOS.<br>
 						Todo o conteúdo do site, todas as fotos, imagens, aqui veiculados, são de propriedade e responsabilidade exclusiva da <?php echo utf8_encode($row_empresa['NomeEmpresa']);?>. É vedada qualquer reprodução, total ou parcial, de qualquer elemento de identidade, sem expressa autorização. A violação de qualquer direito mencionado implicará na responsabilização cível e criminal nos termos da Lei.<br>
 						<?php echo utf8_encode($row_empresa['NomeEmpresa']);?> - CNPJ: <?php echo utf8_encode($row_empresa['Cnpj']);?> - <?php echo utf8_encode($row_empresa['EnderecoEmpresa']);?>, <?php echo utf8_encode($row_empresa['NumeroEmpresa']);?> - <?php echo utf8_encode($row_empresa['ComplementoEmpresa']);?>
 						<?php echo utf8_encode($row_empresa['BairroEmpresa']);?> - <?php echo utf8_encode($row_empresa['MunicipioEmpresa']);?> - <?php echo utf8_encode($row_empresa['EstadoEmpresa']);?> - Cep: <?php echo $row_empresa['CepEmpresa'];?>. <br>

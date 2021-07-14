@@ -241,7 +241,8 @@ banner
 }
 
 #banner{
-	background: url('../img/bg-banner.jpg') no-repeat fixed;
+	/*background: url('../img/bg-banner.jpg') no-repeat fixed;*/
+	background-color: #003761;
 	background-size: cover;
 	min-height: 0px;
 	position: relative;
@@ -249,16 +250,17 @@ banner
 
 .bg-color{
 	background-color: transparent;
-	min-height: 0px;/*esta linha comanda o tamanho do bg, era 650px*/
+	min-height: 300px;/*esta linha comanda o tamanho do bg, era 650px*/
 }
 .banner-info{
-	padding-top: 190px;
+	padding-top: 20px;
 }
 .banner-logo img{
 	display: inline-block;
 }
 .banner-text{
 	color: #fff;
+	margin-top: 30px;
 }
 .banner-text h1{
 	font-family: 'Candal', sans-serif;
@@ -399,6 +401,9 @@ testimonial
 ***************************************/
 #testimonial{
     background-color: #eee;
+}
+#dicas{
+    background-color: #eff;
 }
 .testi-details {
     background: #fff;
@@ -646,10 +651,51 @@ footer
 	
 }
 
-@media (min-width: 220px) and (max-width: 551px){
+@media (min-width: 220px) and (max-width: 267px){
     .testi-info{
         margin-bottom: 20px;
     }
+    .marb20{
+        margin-top: 30px;
+    }
+    h2{
+        font-size: 24px;
+        line-height: 1.2;
+    }
+    .section-title{
+        margin-bottom: 30px;
+    }
+    .medi-info {
+		border: 0px;
+		border-bottom: 1px solid #fff;
+    }
+    .service-info{
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    .caption h3 {
+		font-size: 14px;
+    }
+    .caption p{
+		font-size: 12px;
+		padding-bottom: 5px;
+    }
+    .caption ul li a i{
+        font-size: 14px;
+    }
+    .banner-text h1{
+        font-size: 24px;
+    }
+	.section-padding0{
+		padding: 14px 0px;
+		background-color: #fff;
+	}	
+}
+
+@media (min-width: 268px) and (max-width: 551px){
+    .testi-info{
+        margin-bottom: 20px;
+		}
     .marb20{
         margin-top: 30px;
     }
@@ -725,6 +771,9 @@ footer
 	.section-padding0{
 		padding: 14px 0px;
 		background-color: #fff;
+	}
+	.col-xms-6 {
+	  width: 50%;
 	}
 }
 

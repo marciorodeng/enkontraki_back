@@ -105,7 +105,7 @@
 	</div>
 </section>
 -->
-<section id="about" class="section-padding">
+<section id="about" class="section-padding2">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12  col-md-12 col-sm-12 col-xs-12">
@@ -196,7 +196,7 @@
 	</div>
 </section>
 -->
-<section id="cta-1" class="section-padding">
+<section id="cta-1" class="section-padding2">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -255,7 +255,7 @@
 		</div>
 	</div>
 </section>
-<section id="testimonial" class="section-padding">
+<section id="testimonial" class="section-padding2">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -303,7 +303,7 @@
 		</div>
 	</div>
 </section>
-<section id="dicas" class="section-padding">
+<section id="dicas" class="section-padding2">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -323,31 +323,32 @@
 					</center>
 				</div>	
 			</div>
-			
+			<!--
 			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="testi-details">
-					<!-- Paragraph -->
+					
 					<p>Texto de Depoimento 1.</p>
 				</div>
 				<div class="testi-info">
-					<!-- User Image -->
+					
 					<a href="#"><img src="img/thumb.png" alt="" class="img-responsive"></a>
-					<!-- User Name -->
+					
 					<h3>Nome<span>Cliente</span></h3>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 col-xs-12">
 				<div class="testi-details">
-					<!-- Paragraph -->
+					
 					<p>Texto de Depoimento 2.</p>
 				</div>
 				<div class="testi-info">
-					<!-- User Image -->
+					
 					<a href="#"><img src="img/thumb.png" alt="" class="img-responsive"></a>
-					<!-- User Name -->
+					
 					<h3>Nome<span>Cliente</span></h3>
 				</div>
 			</div>
+			-->
 		</div>
 	</div>
 </section>
