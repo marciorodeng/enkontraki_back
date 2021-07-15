@@ -648,7 +648,9 @@ footer
 		padding: 14px 0px;
 		background-color: #fff;
 	}
-	
+	.carousel-indicators {
+		bottom: -50px;
+	}	
 }
 
 @media (min-width: 220px) and (max-width: 267px){
@@ -689,6 +691,9 @@ footer
 	.section-padding0{
 		padding: 14px 0px;
 		background-color: #fff;
+	}
+	.carousel-indicators {
+		bottom: -50px;
 	}	
 }
 
@@ -730,6 +735,9 @@ footer
 	.section-padding0{
 		padding: 14px 0px;
 		background-color: #fff;
+	}
+	.carousel-indicators {
+		bottom: -50px;
 	}	
 }
 
@@ -775,6 +783,9 @@ footer
 	.col-xms-6 {
 	  width: 50%;
 	}
+	.carousel-indicators {
+		bottom: -50px;
+	}
 }
 
 @media (min-width: 768px){
@@ -815,5 +826,8 @@ footer
 	.section-padding0{
 		padding: 14px 0px;
 		background-color: #fff;
+	}
+	.carousel-indicators {
+		bottom: -50px;
 	}
 }
