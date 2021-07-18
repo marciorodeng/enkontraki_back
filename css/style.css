@@ -200,6 +200,29 @@ banner
     color: #EA6045;
 }
 
+.navbar-fonte{
+		margin-right: 15px;
+		margin-left: 5px;
+}
+@media (min-width: 768px) and (max-width: 991px){
+	.navbar-fonte{
+		font-size: 14px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1054px){
+	.navbar-fonte{
+		font-size: 15px;
+	}
+}
+
+.navbar-logo{
+	/*margin-top:-15px;*/
+}
+
+.navbar-logo  img{
+	margin-left: 30px;
+}
+
 .top-nav-collapse {
     padding: 0; 
     background: rgba(28,74,90, 0.9);
@@ -232,6 +255,13 @@ banner
     text-transform: uppercase;
     background-color: rgba(12, 184, 182, 0.21);
 }
+
+.navbar-menu{
+    background-color: #003761;
+    color: #fff;
+    font-size: 15px;
+}
+
 .affix {
     background-color: #ffffff !important;
 }
@@ -308,6 +338,9 @@ services
 /***************************************
 cta-1
 ***************************************/
+#cta-1{
+	margin-bottom:10px;
+}
 .schedule-tab {
 	background-color: #0CB8B6;
 	float: left;

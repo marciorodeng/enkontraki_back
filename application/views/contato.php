@@ -1,7 +1,8 @@
-<section id="contact" class="section-padding2">
-	<div class="container">
+<section id="contact" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	
 		<div class="row">
 			<div class="col-md-12">
+				<br>
 				<h2 class="ser-title">Fale Conosco</h2>
 				<hr class="botm-line">
 				<!--
@@ -54,5 +55,5 @@
 			</div>
 			-->
 		</div>
-	</div>
+	
 </section>

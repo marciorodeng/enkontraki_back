@@ -1,8 +1,9 @@
-<footer id="footer" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<footer id="footer">
 	<div class="top-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+				
+				<div class="col-md-4 col-sm-4 marb20">
 					<div class="ftr-tle">
 						<h4 class="white no-padding">Sobre Nós</h4>
 					</div>
@@ -37,7 +38,7 @@
 					</div>
 				</div>
 				-->
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+				<div class="col-md-4 col-sm-4 marb20">
 					<div class="ftr-tle">
 						<h4 class="white no-padding">Atendimento</h4>
 					</div>
@@ -66,7 +67,7 @@
 	<div class="footer-line">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+				<div class="col-md-12 text-center">
 					<div class="credits">
 						<h6>Feito Por <a href="https://www.enkontraki.com.br">enkontraki.com.br</a> .TODOS OS DIREITOS RESERVADOS.<br>
 						Todo o conteúdo do site, todas as fotos, imagens, aqui veiculados, são de propriedade e responsabilidade exclusiva da <?php echo utf8_encode($row_empresa['NomeEmpresa']);?>. É vedada qualquer reprodução, total ou parcial, de qualquer elemento de identidade, sem expressa autorização. A violação de qualquer direito mencionado implicará na responsabilização cível e criminal nos termos da Lei.<br>
