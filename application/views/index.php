@@ -28,6 +28,7 @@
 		</div>
 	</div>
 </section>
+<!--
 <section id="service" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 		<h2 class="ser-title">Nossos Serviços</h2>
@@ -83,8 +84,8 @@
 			</div>
 		</div>
 	</div>
-
 </section>
+-->
 <section id="cta-1" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<h2 class="ser-title">Planos</h2>

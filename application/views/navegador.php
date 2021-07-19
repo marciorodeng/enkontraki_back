@@ -61,13 +61,13 @@
 					
 					</li>
 					-->
-					<!--
+					
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Login <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdown01">
-							
+							<!--
 							<li>
 								<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
 									<a class="dropdown-item" href="sair.php">
@@ -82,15 +82,14 @@
 								<?php } ?>
 							</li>
 							<li role="separator" class="divider"></li>
-							
+							-->
 							<li>
-								<a class="dropdown-item" target="_blank" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma:</a>
-								<a class="dropdown-item" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma</a>
-								<a class="dropdown-item" href="../sistema/login/index2">Acessar Plataforma</a>
+								<!--<a class="dropdown-item" target="_blank" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma:</a>
+								<a class="dropdown-item" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma</a>-->
+								<a class="dropdown-item" target="_blank"  href="../sistema/login/index2">Acessar Plataforma</a>
 							</li>
 						</ul>
 					</li>
-					-->
 				</ul>
 			</div>
 		</nav>
