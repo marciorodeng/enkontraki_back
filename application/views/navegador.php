@@ -86,7 +86,7 @@
 							<li>
 								<!--<a class="dropdown-item" target="_blank" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma:</a>
 								<a class="dropdown-item" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma</a>-->
-								<a class="dropdown-item" target="_blank"  href="../sistema/login/index2">Acessar Plataforma</a>
+								<a class="dropdown-item" href="../sistema/login/index2">Acessar Plataforma</a>
 							</li>
 						</ul>
 					</li>
@@ -141,7 +141,7 @@
 			</div>
 			-->
 			<div class="row">	
-				<div class=" col-md-12 col-sm-12 col-xs-12 banner-text text-center ">
+				<div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6  col-sm-offset-2 col-sm-8 col-xs-12 banner-text text-center ">
 					<div class="row">
 						<div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group text-center">
 							<h3 class="white">Empresas</h3>
