@@ -42,12 +42,17 @@
 																			LEFT JOIN App_Produto_Pagamento AS AP ON AP.idApp_Pagamento = OT.idApp_Pagamento
 																			LEFT JOIN Sis_Empresa AS SE ON SE.idSis_Empresa = OT.idSis_Empresa
 																	WHERE 
-																		OT.idApp_Pagamento = '".$id_pedido."'
+																		OT.idApp_Pagamento = '".$id_pedido."' AND
+																		SE.idSis_Empresa = '".$cliente."' 
 																	ORDER BY 
 																		AP.idApp_Produto_Pagamento ASC
 																	");
-								$total = '0';									
-								if(mysqli_num_rows($read_produto) > '0'){
+								$total = '0';
+
+								$cont_orca = mysqli_num_rows($read_produto);
+
+								if(isset($cont_orca) && $cont_orca > 0){
+									
 									foreach($read_produto as $read_produto_orca){
 									$tipofrete = $read_produto_orca['TipoFrete'];
 									$tipofretepagseguro = $read_produto_orca['TipoFretePagSeguro'];
@@ -83,6 +88,9 @@
 										</li>
 									<?php
 									}
+								}else{
+									echo "<script>window.location = 'minhas_faturas.php'</script>";
+									exit();
 								}
 							?>
 							<li class="list-group-item d-flex justify-content-between fundo">

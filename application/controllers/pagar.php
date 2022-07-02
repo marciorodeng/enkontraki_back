@@ -4,6 +4,10 @@
 	
 	if(isset($_SESSION['id_Cliente'.$idSis_Empresa])){
 		$cliente = $_SESSION['id_Cliente'.$idSis_Empresa];
+	}else{
+		$cliente = FALSE;
+		echo "<script>window.location = 'index.php'</script>";
+		exit();
 	}
 	
 	$result_cliente = "SELECT * FROM App_Cliente WHERE idApp_Cliente = '".$cliente."'";
