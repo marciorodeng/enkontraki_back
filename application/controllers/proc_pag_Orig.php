@@ -74,9 +74,16 @@ $query_car = "	SELECT
 					AP.idTab_Produto_Pagamento,
 					AP.idTab_Produtos_Produto,
 					AP.NomeProduto,
-					AP.idApp_Pagamento
+					AP.idApp_Pagamento,
+					TPS.Nome_Prod,
+					TOP2.Opcao,
+					TOP1.Opcao,
+					CONCAT(TPS.Nome_Prod, ' ' ,TOP2.Opcao, ' ' ,TOP1.Opcao) AS Produtos
 				FROM 
 					App_Produto_Pagamento AS AP
+						LEFT JOIN Tab_Produtos_Pagamento AS TPS ON TPS.idTab_Produtos_Pagamento = AP.idTab_Produtos_Produto
+						LEFT JOIN Tab_Opcao AS TOP2 ON TOP2.idTab_Opcao = TPS.Opcao_Atributo_1
+						LEFT JOIN Tab_Opcao AS TOP1 ON TOP1.idTab_Opcao = TPS.Opcao_Atributo_2
 				WHERE 
 					AP.idApp_Pagamento = '" . $Dados['reference'] . "'";
 

@@ -1,19 +1,29 @@
-<section id="service" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	<div class="container">	
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#txtTelefone').mask('(00) 0000-0000'); //Telefone
+		$('#txtCep').mask('00000-000'); //CEP
+		$('#txtValor').mask('000.000.000.000.000,00', {reverse: true}); //Dinheiro
+		$('#creditCardHolderBirthDate').mask('00/00/0000'); //Data Aniversário
+		//$('#senderCPF').mask('000.000.000-00', {reverse: true});
+	});
+</script>
+<section id="service" class="section-padding">
+	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<br>
-				<h1 class="ser-title">Pagar</h1>
+			<div class="col-md-12">
+				<h2 class="ser-title">Pagar Compra!</h2>
 				<hr class="botm-line">
 			</div>
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="col-lg-12">
 				
 				<div class="row">
 					
 					<div class="col-md-5 order-md-2 mb-4">
+
 						<ul class="list-group mb-3 ">										
 							<li class="list-group-item d-flex justify-content-between fundo">
-								Pedido: <strong> <?php echo $id_pedido; ?></strong>
+								<span>Pedido: </span>
+								<strong> <?php echo $id_pedido; ?></strong>
 							</li>							
 							
 							<?php
@@ -21,26 +31,37 @@
 																	SELECT 
 																		OT.idApp_Pagamento,
 																		OT.ValorFrete,
-																		OT.ValorFatura,
+																		OT.ValorOrca,
+																		OT.ValorRestanteOrca,
 																		OT.TipoFrete,
 																		OT.TipoFretePagSeguro,
+																		OT.Cep,
+																		OT.Logradouro,
+																		OT.Numero,
+																		OT.Complemento,
+																		OT.Bairro,
+																		OT.Cidade,
+																		OT.Estado,
 																		AP.idApp_Produto_Pagamento,
 																		AP.QtdProduto,
 																		AP.ValorProduto,
 																		AP.idApp_Pagamento,
+																		AP.idTab_Produto_Pagamento,
+																		AP.idTab_Produtos_Produto,
 																		AP.NomeProduto,
-																		SE.idSis_Empresa,
-																		SE.CepEmpresa,
-																		SE.EnderecoEmpresa,
-																		SE.NumeroEmpresa,
-																		SE.ComplementoEmpresa,
-																		SE.BairroEmpresa,
-																		SE.MunicipioEmpresa,
-																		SE.EstadoEmpresa
+																		TPS.Nome_Prod,
+																		TOP2.Opcao,
+																		TOP1.Opcao,
+																		CONCAT(TPS.Nome_Prod, ' - ' ,TOP2.Opcao, ' - ' ,TOP1.Opcao) AS Produtos,
+																		TPS.idSis_Empresa,
+																		TPS.Arquivo,
+																		TPS.VendaSite
 																	FROM 
 																		App_Pagamento AS OT
 																			LEFT JOIN App_Produto_Pagamento AS AP ON AP.idApp_Pagamento = OT.idApp_Pagamento
-																			LEFT JOIN Sis_Empresa AS SE ON SE.idSis_Empresa = OT.idSis_Empresa
+																			LEFT JOIN Tab_Produtos_Pagamento AS TPS ON TPS.idTab_Produtos_Pagamento = AP.idTab_Produtos_Produto
+																			LEFT JOIN Tab_Opcao AS TOP2 ON TOP2.idTab_Opcao = TPS.Opcao_Atributo_1
+																			LEFT JOIN Tab_Opcao AS TOP1 ON TOP1.idTab_Opcao = TPS.Opcao_Atributo_2
 																	WHERE 
 																		OT.idApp_Pagamento = '".$id_pedido."'
 																	ORDER BY 
@@ -53,7 +74,7 @@
 									$tipofretepagseguro = $read_produto_orca['TipoFretePagSeguro'];
 									$frete = $read_produto_orca['ValorFrete']; 
 									$valorfrete = number_format($frete, 2, '.', '');
-									$valorestanterorca = $read_produto_orca['ValorFatura'];
+									$valorestanterorca = $read_produto_orca['ValorRestanteOrca'];
 									$valorprodutos = number_format($valorestanterorca, 2, '.', '');
 									$total1 = $valorprodutos + $valorfrete;
 									}
@@ -67,7 +88,7 @@
 											
 												<div class="row img-prod-pag">	
 													<div class="col-md-3 ">
-														<img class="team-img img-circle img-responsive" src="<?php echo $idSis_Empresa ?>/produtos/miniatura/manutencao.jpg" alt="" width='50' >
+														<img class="team-img img-circle img-responsive" src="<?php echo $idSis_Empresa ?>/produtos/miniatura/<?php echo $read_produto_view['Arquivo']; ?>" alt="" width='50' >
 													</div>														
 													<div class="col-md-8 ">
 														<div class="row">
@@ -75,7 +96,9 @@
 															<!--<small class="text-muted">Brief description</small>-->
 														</div>
 														<div class="row">	
-															R$ <?php echo number_format($read_produto_view['ValorProduto'],2,",",".");?>															
+															<span class="text-muted">R$ <?php echo number_format($read_produto_view['ValorProduto'],2,",",".");?> x </span> 
+															<span class="text-muted">Qtd. <?php echo $read_produto_view['QtdProduto'];?> = </span>
+															<span class="text-muted">R$ <?php echo number_format($sub_total,2,",",".");?></span>																
 														</div>
 													</div>
 												</div>
@@ -86,11 +109,25 @@
 								}
 							?>
 							<li class="list-group-item d-flex justify-content-between fundo">
-								Total de Itens <strong>: <?php echo $cont_item; ?></strong>
+								<span>Total de Itens </span>
+								<strong>: <?php echo $cont_item; ?></strong>
+							</li>
+							
+							<li class="list-group-item d-flex justify-content-between fundo">
+								<span>Valor dos Produtos </span>
+								<strong>R$ <?php echo number_format($valorestanterorca,2,",",".");?></strong>
 							</li>
 							<li class="list-group-item d-flex justify-content-between fundo">
-								Total <strong>R$ <?php echo number_format($total1,2,",",".");?></strong>
+								<span>Valor do Frete </span>
+								<strong>R$ <?php echo number_format($read_produto_orca['ValorFrete'],2,",",".");?></strong>
 							</li>
+							<li class="list-group-item d-flex justify-content-between fundo">
+								<span>Total </span>
+								<strong>R$ <?php echo number_format($total1,2,",",".");?></strong>
+							</li>
+							<li class="list-group-item d-flex justify-content-between fundo">
+								<span>Pagamento com Boleto, acréscimo de R$1,00 </span>
+							</li>							
 						</ul>
 					</div>
 					<?php if ($row_empresa['Boleto'] == 'S' || $row_empresa['Debito'] == 'S' || $row_empresa['Cartao'] == 'S') { ?>
@@ -140,25 +177,25 @@
 										
 										<input type="hidden" name="shippingAddressRequired" id="shippingAddressRequired" value="true">
 
-										<input type="hidden" name="shippingAddressStreet" class="form-control" id="shippingAddressStreet" value="<?php echo $read_produto_orca['EnderecoEmpresa'];?>" required>
+										<input type="hidden" name="shippingAddressStreet" class="form-control" id="shippingAddressStreet" value="<?php echo $read_produto_orca['Logradouro'];?>" required>
 										
-										<input type="hidden" name="shippingAddressNumber" class="form-control" id="shippingAddressNumber" value="<?php echo $read_produto_orca['NumeroEmpresa'];?>"  required>
+										<input type="hidden" name="shippingAddressNumber" class="form-control" id="shippingAddressNumber" value="<?php echo $read_produto_orca['Numero'];?>"  required>
 
-										<input type="hidden" name="shippingAddressComplement" class="form-control" id="shippingAddressComplement" value="<?php echo $read_produto_orca['ComplementoEmpresa'];?>">
+										<input type="hidden" name="shippingAddressComplement" class="form-control" id="shippingAddressComplement" value="<?php echo $read_produto_orca['Complemento'];?>">
 
-										<input type="hidden" name="shippingAddressDistrict" class="form-control" id="shippingAddressDistrict" value="<?php echo $read_produto_orca['BairroEmpresa'];?>" required>
+										<input type="hidden" name="shippingAddressDistrict" class="form-control" id="shippingAddressDistrict" value="<?php echo $read_produto_orca['Bairro'];?>" required>
 
-										<input type="hidden" name="shippingAddressCity" class="form-control" id="shippingAddressCity" value="<?php echo $read_produto_orca['MunicipioEmpresa'];?>" required>
+										<input type="hidden" name="shippingAddressCity" class="form-control" id="shippingAddressCity" value="<?php echo $read_produto_orca['Cidade'];?>" required>
 
-										<input type="hidden" name="shippingAddressState" class="form-control" id="shippingAddressState" value="<?php echo $read_produto_orca['EstadoEmpresa'];?>" required>
+										<input type="hidden" name="shippingAddressState" class="form-control" id="shippingAddressState" value="<?php echo $read_produto_orca['Estado'];?>" required>
 
-										<input type="hidden" name="shippingAddressPostalCode" class="form-control" id="shippingAddressPostalCode" value="<?php echo $read_produto_orca['CepEmpresa'];?>" required>
+										<input type="hidden" name="shippingAddressPostalCode" class="form-control" id="shippingAddressPostalCode" value="<?php echo $read_produto_orca['Cep'];?>" required>
 										
 										<div class="row">
 											<div class="col-md-9 mb-3">
-												<h5><?php echo utf8_encode($read_produto_orca['EnderecoEmpresa']);?>, <?php echo utf8_encode($read_produto_orca['NumeroEmpresa']);?> - <?php echo utf8_encode($read_produto_orca['ComplementoEmpresa']);?><br>
-													<?php echo utf8_encode($read_produto_orca['BairroEmpresa']);?> - <?php echo utf8_encode($read_produto_orca['MunicipioEmpresa']);?> - <?php echo utf8_encode($read_produto_orca['EstadoEmpresa']);?><br>
-													Cep: <?php echo $read_produto_orca['CepEmpresa'];?>.
+												<h5><?php echo utf8_encode($read_produto_orca['Logradouro']);?>, <?php echo utf8_encode($read_produto_orca['Numero']);?> - <?php echo utf8_encode($read_produto_orca['Complemento']);?><br>
+													<?php echo utf8_encode($read_produto_orca['Bairro']);?> - <?php echo utf8_encode($read_produto_orca['Cidade']);?> - <?php echo utf8_encode($read_produto_orca['Estado']);?><br>
+													Cep: <?php echo $read_produto_orca['Cep'];?>.
 												</h5>
 											</div>
 										</div>							
@@ -188,7 +225,6 @@
 										<h3 class="mb-3">Escolha forma de pagamento</h3>
 										
 										<div class="row">
-											<!--
 											<?php if ($row_empresa['Boleto'] == 'S') { ?>
 											<div class="col-md-4 mb-3 ">
 												<div class="custom-control custom-radio">
@@ -198,17 +234,15 @@
 												</div>
 											</div>
 											<?php } ?>
-											-->
 											<?php if ($row_empresa['Debito'] == 'S') { ?>
 											<div class="col-md-4 mb-3 ">	
 												<div class="custom-control custom-radio">
-													<input type="radio" name="paymentMethod" class="custom-control-input" id="eft" value="eft" onclick="tipoPagamento('eft')" >
+													<input type="radio" name="paymentMethod" class="custom-control-input" id="eft" value="eft" onclick="tipoPagamento('eft')">
 													<label class="custom-control-label" for="eft">Débito Online</label>
 													<img src="../<?php echo $sistema ?>/arquivos/imagens/debitoonline.png" class="img-responsive img-link bankName" width='150'>
 												</div>
 											</div>
 											<?php } ?>
-											<!--
 											<?php if ($row_empresa['Cartao'] == 'S') { ?>
 											<div class="col-md-4 mb-3 ">	
 												<div class="custom-control custom-radio">
@@ -218,7 +252,6 @@
 												</div>
 											</div>
 											<?php } ?>
-											-->
 										</div>
 										<!-- Pagamento com débito online -->
 
@@ -436,7 +469,7 @@
 										<!--<input type="submit" name="btnComprar" id="btnComprar" value="Comprar">-->
 										<hr class="mb-4">
 											<span id="msg"></span>
-											<button class="btn btn-primary btn-lg btn-block comprar" type="submit" name="btnComprar" id="btnComprar"> Pagar </button>
+											<button class="btn btn-primary btn-lg btn-block comprar" type="submit" name="btnComprar" id="btnComprar"> Comprar </button>
 											
 											<div class="col-lg-12 alert alert-warning aguardar" role="alert" name="aguardar" id="aguardar">
 												Aguarde um instante! Estamos processando sua solicitação!
@@ -448,7 +481,7 @@
 						</div>
 					<?php } ?>
 				</div>
-			</div>
+			</div>				
 		</div>
 	</div>	
 </section>

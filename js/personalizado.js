@@ -267,8 +267,9 @@ function recupHashCartao() {
                 },
                 error: function (retorna) {
 					//console.log("Erro" + JSON.stringify(retorna));
-					$("#msg").html('<p style="color: #FF0000">Erro ao realizar a transação</p>')
-					window.location = 'meus_pedidos.php';
+					$("#msg").html('<p style="color: #FF0000">Erro ao realizar a transação</p>');
+					window.location = 'minhas_faturas.php';
+					//window.location = 'index.php';
                 }
             });
         }

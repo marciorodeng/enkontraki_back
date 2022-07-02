@@ -1,12 +1,14 @@
-/*
+
 body {
+	/*
+    background-color: #f0f0f0;
 	font-family: 'Open Sans', sans-serif;
 	line-height: 20px;
 	color: #000000;
 	font-size: 300;
 	font-size: 16px;
+	*/
 }
-*/
 ol, ul {
 	list-style: none;
 }
@@ -30,6 +32,10 @@ h1, h2, h3, h4, h5, h6
 }
 a, a:hover, a:focus, a:active{
     outline: none;
+}
+
+.container-2{
+	display: flex;
 }
 
 .section-padding{
@@ -203,15 +209,17 @@ banner
 .navbar-fonte{
 		margin-right: 15px;
 		margin-left: 5px;
+		font-size: 20px;
+		
 }
 @media (min-width: 768px) and (max-width: 991px){
 	.navbar-fonte{
-		font-size: 14px;
+		font-size: 16px;
 	}
 }
 @media (min-width: 992px) and (max-width: 1054px){
 	.navbar-fonte{
-		font-size: 15px;
+		font-size: 18px;
 	}
 }
 
@@ -257,7 +265,7 @@ banner
 }
 
 .navbar-menu{
-    background-color: #003761;
+    background-color: #BC0823;
     color: #fff;
     font-size: 15px;
 }
@@ -269,28 +277,44 @@ banner
 {
     background-color: rgba(12, 184, 182) !important;
 }
+/*
+#navbar a{
+	color: #000000;
+}
+
+#navbar  a:hover, a:focus, a:active{
+    outline: none;
+	color: #BC0823;
+}
+*/
 
 #banner{
-	/*background: url('../img/bg-banner.jpg') no-repeat fixed;*/
-	background-color: #003761;
+	/*background: url('../img/bg-banner.jpg') no-repeat fixed;    #003761*/
+	background-color: #FFFFFF;
 	background-size: cover;
 	min-height: 0px;
 	position: relative;
 }
 
+.botoes-seletores{
+	margin-top: 7px;
+}
+
 .bg-color{
 	background-color: transparent;
-	min-height: 300px;/*esta linha comanda o tamanho do bg, era 650px*/
+	/*min-height: 200px;esta linha comanda o tamanho do bg, era 650px*/
 }
 .banner-info{
-	padding-top: 20px;
+	padding-top: 0px;
+	margin-left: -15px;
+	margin-right: -15px;
 }
 .banner-logo img{
 	display: inline-block;
 }
 .banner-text{
 	color: #fff;
-	margin-top: 30px;
+	margin-top: 5px;
 }
 .banner-text h1{
 	font-family: 'Candal', sans-serif;
@@ -318,9 +342,114 @@ banner
     padding-top: 8px;
     display: inline-block;
 }
+
+/***************************************
+pesquisar
+***************************************/
+#pesquisar{
+	margin-top: -30px;
+	margin-bottom: 20px;
+}
+#pesquisar img{
+    width: 200px;
+    margin-top: 15px;
+}
+#pesquisar span{
+    font-size: 38px;
+    color: #6f4ff7;
+}
+
+/***************************************
+about
+***************************************/
+#about{
+    /*background-color: rgba(238, 238, 238, 0.15);*/
+	margin-bottom: 30px;
+}
+#about h1{
+    margin-top: -10px;
+}
+
+#about h4{
+    color: #ffffff;
+	letter-spacing: 1.5px;
+}
+figure { width: 100%; min-width: 17.5em; margin:0 auto;}
+figcaption { font: 120% sans-serif; text-align: center;}
+.boxVideo {
+    position: relative;
+    padding-bottom: 56.25%; 
+    padding-top: 25px;
+    height: 0;
+    margin:0 auto;
+}
+.boxVideo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/*
+#about span{
+    font-size: 30px;
+    color: #ffffff;
+}
+*/
+#topicos span{
+    font-size: 30px;
+    color: #ffffff;
+}
+.thumbnail0 {
+	border-radius: 0px 30px 0px 30px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+	margin-left:-5px;
+	margin-right:-5px;
+	text-align: center;
+    /*background-color: #BC0823;
+    background-color: rgba(150, 5, 10, 0.85);*/
+    background-color: #C2002F;
+}
+
+.sombra-about{
+	/*box-shadow: inset 0px 0px 7px 1px black;*/
+}
+
+#slide{
+    /*background-color: rgba(238, 238, 238, 0.15);*/
+	background-color: #f0f0f0;
+}
+
 /***************************************
 services
 ***************************************/
+#service{
+	margin-top: -30px;
+	margin-bottom: 20px;
+}
+#service img{
+	border-radius: 15px;
+    width: 60px;
+    height: 60px;
+    margin-top: 15px;
+}
+#service span{
+    font-size: 38px;
+    color: #6f4ff7;
+}
+.thumbnail1 {
+	border-radius: 0px 30px 0px 30px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+	text-align: center;
+    background-color: #f7f7f7;
+}
+.sombra-atuacao{
+	box-shadow: inset 0px 0px 7px 1px black;
+}
 .icon i{
 	color: #000000;
 	font-size: 45px;
@@ -339,11 +468,17 @@ services
 cta-1
 ***************************************/
 #cta-1{
-	margin-bottom:10px;
+	/*background-color: #eeeeee;*/
+}
+.sombra-cta-1{
+	box-shadow: 3px 5px 5px 1px black;
+}
+.sombra-texto{
+	text-shadow: 2px 2px 2px rgb(0,0,0,0.315);
 }
 .schedule-tab {
 	background-color: #0CB8B6;
-	float: left;
+	float: left;*/
 }
 .medi-info{
 	border-right: 1px solid #fff;
@@ -374,17 +509,6 @@ td {
 }
 .medi-info, .time-info{
     font-size: 14px;
-}
-/***************************************
-about
-***************************************/
-#about{
-    background-color: rgba(238, 238, 238, 0.15);
-}
-
-#slide{
-    background-color: rgba(238, 238, 238, 0.15);
-	background-color: #fff;
 }
 
 .lg-line{
@@ -418,10 +542,31 @@ about
 	padding-bottom: 10px;
 }
 /***************************************
-doctor team
+doctor-team
 ***************************************/
-.thumbnail {
-	border-radius: 0px;
+#doctor-team{
+    background-color: #ebebeb;
+}
+#doctor-team img{
+	border-radius: 15px;
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+}
+.thumbnail2 {
+	border-radius: 20px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+	text-align: center;
+    background-color: #eee;
+}
+.thumbnail3 {
+	border-radius: 20px;
+    background-color: #ebebeb;
+}
+.sombra-equipe{
+	box-shadow: 0px 0px 5px 1px black;
 }
 .caption h3{
     padding-bottom: 5px;
@@ -431,12 +576,16 @@ doctor team
 }
 /***************************************
 testimonial
+depoente
 ***************************************/
 #testimonial{
-    background-color: #eee;
+    background-color: #e6e6e6;
 }
 #dicas{
-    background-color: #eff;
+    background-color: #fff;
+}
+#dicas h1{
+	margin-top: -10px;
 }
 .testi-details {
     background: #fff;
@@ -447,12 +596,14 @@ testimonial
 }
 .testi-info a {
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     background-color: #fff;
     border-radius: 50%;
     float: left;
     margin-right: 10px;
+    padding-bottom: 80px;
+    margin-bottom: 15px;
 }
 .testi-info a img{
 	border-radius: 50%;
@@ -465,6 +616,7 @@ testimonial
     margin-top: 8px;
 }
 .testi-info h3 > span {
+    margin-top: 10px;
     display: block;
     line-height: 16px;
     font-weight: 400;
@@ -523,8 +675,14 @@ cta -2
 	margin-right: 7px;
 }
 /***************************************
-contact us
+contact  e0e0e0
 ***************************************/
+#contact{
+    background-color: #e0e0e0;
+}
+#contact h1{
+    margin-top: -10px;
+}
 .space {
     margin-top: 40px;
 }
@@ -770,7 +928,7 @@ footer
 		background-color: #fff;
 	}
 	.carousel-indicators {
-		bottom: -50px;
+		bottom: -10px;
 	}	
 }
 
@@ -817,7 +975,7 @@ footer
 	  width: 50%;
 	}
 	.carousel-indicators {
-		bottom: -50px;
+		bottom: -10px;
 	}
 }
 
@@ -861,6 +1019,6 @@ footer
 		background-color: #fff;
 	}
 	.carousel-indicators {
-		bottom: -50px;
+		bottom: -10px;
 	}
 }

@@ -12,10 +12,9 @@ if($btnLogin){
 		$result_usuario = "SELECT *
 
 							FROM 
-								Sis_Usuario 
+								Sis_Associado 
 							WHERE 
-								idSis_Empresa = '5' AND
-								CelularUsuario = '".$CelularUsuario."' AND
+								Associado = '".$CelularUsuario."' AND
 								Senha = '".md5($Senha)."' 
 								
 							LIMIT 1";
@@ -28,7 +27,7 @@ if($btnLogin){
 			$_SESSION['msg'] = "Login e/ou Senha incorretos!";
 			header("Location: login_associado.php");
 		}else{
-			$_SESSION['id_Associado'] = $row_usuario['idSis_Usuario'];
+			$_SESSION['id_Associado'] = $row_usuario['idSis_Associado'];
 			$_SESSION['Nome_Associado'] = $row_usuario['Nome'];
 			$_SESSION['Email_Associado'] = $row_usuario['Email'];
 			/*

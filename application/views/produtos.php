@@ -4,35 +4,21 @@
 	}else{
 		unset(	$_SESSION['id_Cliente'.$idSis_Empresa],
 				$_SESSION['Nome_Cliente'.$idSis_Empresa]
-				);	
-	}	
+		);	
+	}
+	/*
+	echo '<br>';
+	echo "<pre>";
+	print_r($idSis_Empresa);
+	echo '<br>';
+	print_r($cliente);
+	echo "</pre>";
+	*/
+	
 ?>
 <section id="service" class="section-padding">
 	<div class="container">
-		<div class="row">	
-			<div class="col-lg-3">
-				<?php
-				$result_categoria = "SELECT * FROM Tab_Catprod_Pagamento WHERE TipoCatprod_Pagamento = 'S'  ORDER BY Catprod_Pagamento ASC ";
-				$read_categoria = mysqli_query($conn, $result_categoria);
-				if(mysqli_num_rows($read_categoria) > '0'){?>
-					<div class="row">	
-						<div class="col-lg-12">
-							<h2 class="ser-title ">Serviços</h2>
-							<hr class="botm-line">
-							<div class="list-group">
-								<?php
-								foreach($read_categoria as $read_categoria_view){
-									echo '<a href="produtos.php?cat='.$read_categoria_view['idTab_Catprod_Pagamento'].'" class="list-group-item">'.$read_categoria_view['Catprod_Pagamento'].'</a>';
-								}
-								?>
-								
-							</div>
-						</div>
-					</div>
-				<?php	
-				}
-				?>
-			</div>
+		<div class="row">
 			<div class="col-lg-9">
 				<?php if(isset($_SESSION['id_Cliente'.$idSis_Empresa]) && isset($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) && count($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]]) > '0'){ ?>
 					<div class="row">
@@ -84,7 +70,7 @@
 										echo'
 										<div class="col-lg-4 col-md-6 col-sm-6 mb-4">
 											<div class="img-produtos ">
-												<a href="produtosderivados.php?id_modelo='.$read_produto_view_id['idTab_Produto_Pagamento'].'>">
+												<a href="produtosderivados.php?id_modelo='.$read_produto_view_id['idTab_Produto_Pagamento'].'">
 													<img class="team-img " src="'.$idSis_Empresa.'/produtos/miniatura/'.$read_produto_view_id['Arquivo'].'" alt="" class="img-circle img-responsive" width="200">
 												</a>					 
 												<div class="card-body">
@@ -101,7 +87,7 @@
 								}
 							}
 						}		
-					?>
+						?>
 				</div>
 			</div>
 		</div>

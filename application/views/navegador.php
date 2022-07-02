@@ -1,8 +1,3 @@
-<?php
-	if($idSis_Empresa){
-		#$_SESSION['Acesso']['idSis_Empresa'] = $idSis_Empresa;
-	}
-?>
 <section id="banner" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	<div class="bg-color">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-menu">
@@ -13,110 +8,107 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>					
-				<a class="navbar-brand navbar-logo" href="index.php"><img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/<?php echo $row_documento['Logo_Nav']; ?>"></a>
-				<!--
-				<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
-					<a class="navbar-brand-nome"style="color: #FFFFFF" href=""><?php echo utf8_encode($_SESSION['Nome_Cliente'.$idSis_Empresa]);?></a>
-				<?php }else{ ?>
-					<a class="navbar-brand-nome "style="color: #FFFFFF" href="login_cliente.php">!! Login do Cliente !!</a>
-				<?php } ?>
-				-->
+				<a class="navbar-brand navbar-logo" href="" data-toggle="modal" data-target="#buscaModal">
+					<img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/<?php echo $row_documento['Logo_Nav']; ?>">
+				</a>
 			</div>
+			<!--
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-2">
+				<a type="button" class="" href="" data-toggle="modal" data-target="#buscaModal">
+					<img class="" type="button"  width='20' src="../sistema/arquivos/imagens/lupa.png">
+				</a>
+			</div>
+			-->
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right navbar-fonte">
 					<li class="nav-item">
-						<a class="nav-link" href="#banner">Enkontraki</a>
+						<a class="nav-link" href="index.php">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#about">A Plataforma</a>
+						<a class="nav-link" href="dicas.php">Dicas</a>
+					</li>
+					<li class="nav-item ">
+						<a class="nav-link " href="pesquisar.php" >Empresas </a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#cta-1">Planos</a>
+						<a class="nav-link" href="contact.php">Fale Conosco</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#testimonial">Depoimentos</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#dicas">Dicas</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#contact">Fale Conosco</a>
-					</li>
-					<!--
-					<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
-						<li class="nav-item">
-							<a class="nav-link" href="meu_carrinho.php">Meu Carrinho</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="meus_pedidos.php">Meus Pedidos</a>
-						</li>
-					<?php } ?>
-					
-					<li class="nav-item">
-						<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
-							<a class="nav-link" href="sair.php">Sair</a>							
-						<?php } else { ?>
-							<a class="nav-link" href="../sistema/login/index2">Plataforma</a>
-						<?php } ?>
-					
-					</li>
-					-->
-					
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Login <span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="dropdown01">
-							<!--
-							<li>
-								<?php if(isset($_SESSION['Nome_Cliente'.$idSis_Empresa])){ ?>
-									<a class="dropdown-item" href="sair.php">
-										<img class="img-circle " width='40' src="../<?php echo $row_empresa['Site']; ?>/<?php echo $row_empresa['idSis_Empresa']; ?>/clientes/miniatura/<?php echo $_SESSION['Arquivo_Cliente'.$idSis_Empresa]; ?>" alt=""> 
-										<?php echo utf8_encode($_SESSION['Nome_Cliente'.$idSis_Empresa]);?> 
-										/ Deslogar
-									</a>							
-								<?php } else { ?>	
-									<a class="dropdown-item" href="login_cliente.php">
-										Login do Cliente:
+						<?php if(isset($_SESSION['id_Admin'.$idSis_Empresa])){ ?>
+							<a style="font-size:20px;" class="btn btn-success nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<div class="container-2"> 
+									<img class="img-circle img-responsive" style="width:30px; height:30px; margin-top:-10px; margin-bottom:-3px" src="../enkontraki/1/documentos/miniatura/icone.jpg">
+									<span class="caret" style="margin-top:5px; margin-left:10px"></span>
+								</div>
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="dropdown01">
+								<li>
+									<a class="dropdown-item" href="faturas.php">Faturas</a>
+								</li>
+									<li role="separator" class="divider"></li>
+								<li>
+									<a class="dropdown-item" href="sair_admin.php"> 
+										Deslogar - <?php echo $_SESSION['Nome_Admin'.$idSis_Empresa];?> 
 									</a>
+								</li>
+							</ul>
+						<?php }else{ ?>
+							<a style="font-size:20px;" class="btn btn-danger nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<div class="container-2">
+									<?php if(isset($_SESSION['id_Cliente'.$idSis_Empresa])){ ?> 
+										<img class="img-circle img-responsive" style="width:30px; height:30px; margin-top:-10px; margin-bottom:-3px" src="../<?php echo $_SESSION['Site_Cliente'.$idSis_Empresa];?>/<?php echo $_SESSION['id_Cliente'.$idSis_Empresa];?>/documentos/miniatura/<?php echo $_SESSION['Logo_Cliente'.$idSis_Empresa];?>">
+									<?php } else{ ?>
+										Sou Cliente 
+									<?php } ?>
+									<span class="caret" style="margin-top:5px; margin-left:10px"></span>
+								</div>
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="dropdown01">
+								<li>
+									<a class="dropdown-item" href="../sistema/login/index2">Painel de Controle</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<?php if(isset($_SESSION['id_Cliente'.$idSis_Empresa])){ ?>
+									<li>
+										<a class="dropdown-item" href="minhas_faturas.php">Minhas Faturas</a>
+									</li>
+									<li role="separator" class="divider"></li>
+									<li>
+										<a class="dropdown-item" href="sair.php">
+											Deslogar - <?php echo $_SESSION['Nome_Cliente'.$idSis_Empresa];?>
+										</a>
+									</li>
+								<?php } else{ ?>
+									<li>
+										<a class="dropdown-item" href="login_cliente.php">Manutenção</a>
+									</li>
 								<?php } ?>
-							</li>
-							<li role="separator" class="divider"></li>
-							-->
-							<li>
-								<!--<a class="dropdown-item" target="_blank" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma:</a>
-								<a class="dropdown-item" href="../<?php #echo $sistema;?>/login/index2">Acessar Plataforma</a>-->
-								<a class="dropdown-item" href="../sistema/login/index2">Acessar Plataforma</a>
-							</li>
-						</ul>
+							</ul>							
+						<?php } ?>
 					</li>
 				</ul>
-			</div>
+			</div>	
 		</nav>
+
+	</div>
+	
+
+</section>
+<section id="slides" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="banner-info">
-			<div data-interval="3000" id="carouselSite" class="carousel slide" data-ride="carousel">
+			<div data-interval="15000" id="carouselSite" class="carousel slide" data-ride="carousel">
+				<!--
 				<ol class="carousel-indicators">
 					<li data-target="#carouselSite" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselSite" data-slide-to="1"></li>
-					<li data-target="#carouselSite" data-slide-to="2"></li>
-					<li data-target="#carouselSite" data-slide-to="3"></li>
-					<li data-target="#carouselSite" data-slide-to="4"></li>				
+					<li data-target="#carouselSite" data-slide-to="1"></li>			
 				</ol>
+				-->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/Slide1.jpg" class="img-responsive d-block">												
 					</div>
 					<div class="item">
-						<img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/Slide2.jpg" class="img-responsive d-block">												
-					</div>
-					<div class="item">
-						<img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/Slide3.jpg" class="img-responsive d-block">												
-					</div>
-					<div class="item">
-						<img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/Slide4.jpg" class="img-responsive d-block">												
-					</div>
-					<div class="item">
-						<img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/Slide5.jpg" class="img-responsive d-block">												
+						<img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/Slide1.jpg" class="img-responsive d-block">												
 					</div>
 				</div>
 				<!--
@@ -130,42 +122,63 @@
 				</a>
 				-->
 			</div>
-			<!--
-			<div class="banner-logo text-center">
-				<img src="img/logo1.png" class="img-responsive">
-			</div>
-			-->
-			<!--
-			<div class="overlay-detail text-center">
-				<a href="#about"><i class="fa fa-angle-down"></i>ffff</a>
-			</div>
-			-->
-			<div class="row">	
-				<div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6  col-sm-offset-2 col-sm-8 col-xs-12 banner-text text-center ">
+		</div>
+</section>
+			
+	<div id="buscaModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-warning">
 					<div class="row">
-						<div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group text-center">
-							<h3 class="white">Empresas</h3>
+						<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+							<h3 class="modal-title" id="buscaModalLabel">Pesquisar na Plataforma</h3>
+							<div class="row">
+								<div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 mb-3 ">	
+									<div class="custom-control custom-radio">
+										<input type="radio" name="SetBusca" class="custom-control-input "  id="SetProduto" value="PD"  checked>
+										<label class="custom-control-label" for="Produto">Produtos</label>
+									</div>
+								</div>
+								<div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 mb-3 ">	
+									<div class="custom-control custom-radio">
+										<input type="radio" name="SetBusca" class="custom-control-input " id="SetPromocao" value="PM">
+										<label class="custom-control-label" for="Promocao">Promoções</label>
+									</div>
+								</div>
+								<div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 mb-3 ">	
+									<div class="custom-control custom-radio">
+										<input type="radio" name="SetBusca" class="custom-control-input " id="SetEmpresa" value="EM" >
+										<label class="custom-control-label" for="Empresa">Empresas</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="limpaBuscaProduto(), limpaBuscaPromocao(), limpaBuscaEmpresa()">
+								<span aria-hidden="true">&times;</span>
+							</button>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 form-group text-center">
-							<a  type="button" class="btn btn-sm btn-warning btn-block text-left" href="../sistema/pesquisar/empresas" role="button" > 
-								 Pesquisar!
-							</a>											
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<input class="form-control input-produto" type="text" name="Produto" id="Produto" maxlength="255" placeholder="Busca Produto e Serviços">
+							<input class="form-control input-promocao" type="text" name="Promocao" id="Promocao" maxlength="255" placeholder="Busca Promoções">
+							<input class="form-control input-empresa" type="text" name="Empresa" id="Empresa" maxlength="255" placeholder="Busca Empresas e Atuações">
 						</div>
-						<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 form-group text-center">
-							<a  type="button" class="btn btn-sm btn-danger btn-block text-left" href="../sistema/loginempresa/registrar" role="button" > 
-								 Cadastrar!
-							</a>											
+					</div>	
+				</div>
+				<div class="modal-body">
+					<div class="input_fields_produtos"></div>
+					<div class="input_fields_promocao"></div>
+					<div class="input_fields_empresa"></div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" name="botaoFecharBusca" id="botaoFecharBusca" onclick="limpaBuscaProduto(), limpaBuscaPromocao(), limpaBuscaEmpresa()">
+								<span class="glyphicon glyphicon-remove"></span> Fechar
+							</button>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 form-group text-center">
-							<a  type="button" class="btn btn-sm btn-info btn-block text-left" href="../sistema/login/index2" role="button" > 
-								 Acessar!
-							</a>											
-						</div>	
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</section>		

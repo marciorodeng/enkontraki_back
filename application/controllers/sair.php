@@ -1,5 +1,6 @@
 <?php
-unset(	$_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]], 
+unset(	$_SESSION['ID_Empresa'],
+		$_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]], 
 		$_SESSION['total_produtos'.$_SESSION['id_Cliente'.$idSis_Empresa]],
 		$_SESSION['id_Cliente'.$idSis_Empresa], 
 		$_SESSION['Nome_Cliente'.$idSis_Empresa], 
@@ -14,5 +15,5 @@ unset(	$_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]],
 		);
 
 //$_SESSION['msg'] = "Deslogado com sucesso";
-//header("Location: index.php");
-header("Location: inicial.php");
+header("Location: index.php");
+//header("Location: inicial.php");

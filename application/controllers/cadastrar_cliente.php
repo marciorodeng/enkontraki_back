@@ -46,7 +46,7 @@ if($btnCadUsuario){
 			$_SESSION['msg'] = "Este e-mail já está cadastrado";
 		}
 		*/
-		$result_usuario = "SELECT idApp_Cliente FROM App_Cliente WHERE CelularCliente='". $dados['CelularCliente'] ."' AND idSis_Empresa = '" .$idSis_Empresa. "'";
+		$result_usuario = "SELECT idApp_Cliente FROM App_Cliente WHERE usuario='". $dados['CelularCliente'] ."' AND idSis_Empresa = '" .$idSis_Empresa. "'";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
 		if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
 			$erro = true;

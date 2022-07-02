@@ -35,7 +35,6 @@
 								while($row_carousel1 = mysqli_fetch_assoc($resultado_carousel1)){
 									if($controle_ativo1 == 2){ ?>
 										<div class="item active">
-											<!--<img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/<?php echo $row_carousel1['Slide1']; ?>" alt="">-->
 											<img  src="<?php echo $idSis_Empresa ?>/documentos/miniatura/<?php echo $row_carousel1['Slide1']; ?>" alt="">
 											<div class="carousel-caption">
 													
@@ -51,7 +50,6 @@
 										$controle_ativo1 = 1;
 									}else{ ?>
 										<div class="item">
-											<!--<img src="<?php echo $idSis_Empresa ?>/documentos/miniatura/<?php echo $row_carousel1['Slide1']; ?>" alt="">-->
 											<img  src="<?php echo $idSis_Empresa ?>/documentos/miniatura/<?php echo $row_carousel1['Slide1']; ?>" alt="">
 											<div class="carousel-caption">
 													<div class="row">

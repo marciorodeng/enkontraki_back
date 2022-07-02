@@ -29,6 +29,8 @@ if($btnLogin){
 		}else{
 			$_SESSION['id_Cliente'.$idSis_Empresa] = $row_usuario['idSis_Empresa'];
 			$_SESSION['Nome_Cliente'.$idSis_Empresa] = $row_usuario['NomeEmpresa'];
+			$_SESSION['Logo_Cliente'.$idSis_Empresa] = $row_usuario['Arquivo'];
+			$_SESSION['Site_Cliente'.$idSis_Empresa] = $row_usuario['Site'];
 			$_SESSION['Email_Cliente'.$idSis_Empresa] = $row_usuario['Email'];
 			$_SESSION['CelularCliente'.$idSis_Empresa] = $row_usuario['CelularAdmin'];
 			$_SESSION['Cep_Cliente'.$idSis_Empresa] = $row_usuario['CepEmpresa'];
@@ -43,9 +45,9 @@ if($btnLogin){
 			if(isset($_SESSION['carrinho'.$_SESSION['id_Cliente'.$idSis_Empresa]])){
 				header("Location: meu_carrinho.php");			
 			}else{	
-				//header("Location: index.php");
+				header("Location: index.php");
 				//header("Location: inicial.php");
-				header("Location: produtos.php");
+				//header("Location: produtos.php");
 			}
 			
 		}
